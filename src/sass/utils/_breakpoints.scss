@@ -1,0 +1,24 @@
+/// Creates mobile-first media queries 
+/// @group utilities
+/// @param { css identifier } $breakpoint - target breakpoint
+/// @output "@media" rule
+
+
+@mixin media-breakpoint-up( $breakpoint ) {
+    @media only screen and ( min-width: $breakpoint ) {
+        @content;
+    }
+}
+
+// to use:
+// @use '../utils/breakpoints';
+
+// @include breakpoints.media-breakpoint-up(400px) {
+//     // CSS code here
+// }
+
+// <picture>
+//   <source srcset="images/illustration-sign-up-desktop.svg" media="(min-width: 992px)">
+//   <source srcset="images/illustration-sign-up-mobile.svg">
+//   <img class="image" src="images/illustration-sign-up-mobile.svg" alt="form-preview">
+// </picture>
